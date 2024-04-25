@@ -1,0 +1,847 @@
+{
+    "GantryAxisX": {
+        "Functions": {
+            "GetPosition": {
+                "FunctionDescription": {
+                    "Name": "Get Axis Position",
+                    "Description": "Gets the actual Position of the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "MoveAbsolute": {
+                "FunctionDescription": {
+                    "Name": "MoveAbsolute",
+                    "Description": "Moves to an absolute position",
+                    "FunctionType": "Positioning function",
+                    "Category": "Positioning function"
+                },
+                "FunctionParameter": {
+                    "Position": {
+                        "Name": "Position",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 228.874206,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 41.856932,
+                        "Unit": "mm/s",
+                        "Default": 10.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 491.475,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 491.475,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 1474.425,
+                        "Unit": "mm/s",
+                        "Default": 1474.425,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "MoveRelative": {
+                "FunctionDescription": {
+                    "Name": "MoveRelative",
+                    "Description": "Moves to an relative position",
+                    "FunctionType": "Positioning function",
+                    "Category": "Positioning function"
+                },
+                "FunctionParameter": {
+                    "Distance": {
+                        "Name": "Distance",
+                        "Description": "Relative Distance to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 10.0,
+                        "Unit": "mm/s",
+                        "Default": 10.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 1474.425,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "Reset": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                }
+            },
+            "PowerOn": {
+                "FunctionDescription": {
+                    "Name": "Power On",
+                    "Description": "Enables the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "PowerOff": {
+                "FunctionDescription": {
+                    "Name": "Power Off",
+                    "Description": "Disables the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            }
+        }
+    },
+    "GantryAxisY": {
+        "Functions": {
+            "GetPosition": {
+                "FunctionDescription": {
+                    "Name": "Get Axis Position",
+                    "Description": "Gets the actual Position of the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "MoveAbsolute": {
+                "FunctionDescription": {
+                    "Name": "MoveAbsolute",
+                    "Description": "Moves to an absolute position",
+                    "FunctionType": "Positioning function",
+                    "Category": "Positioning function"
+                },
+                "FunctionParameter": {
+                    "Position": {
+                        "Name": "Position",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 183.431701,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 27.349536,
+                        "Unit": "mm/s",
+                        "Default": 10.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 491.475,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 491.475,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 1474.42,
+                        "Unit": "mm/s",
+                        "Default": 1474.42,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "MoveRelative": {
+                "FunctionDescription": {
+                    "Name": "MoveRelative",
+                    "Description": "Moves to an relative position",
+                    "FunctionType": "Positioning function",
+                    "Category": "Positioning function"
+                },
+                "FunctionParameter": {
+                    "Distance": {
+                        "Name": "Distance",
+                        "Description": "Relative Distance to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 10.0,
+                        "Unit": "mm/s",
+                        "Default": 10.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 491.475,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 1474.42,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "Reset": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                }
+            },
+            "PowerOn": {
+                "FunctionDescription": {
+                    "Name": "Power On",
+                    "Description": "Enables the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "PowerOff": {
+                "FunctionDescription": {
+                    "Name": "Power Off",
+                    "Description": "Disables the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            }
+        }
+    },
+    "GantryAxisZ": {
+        "Functions": {
+            "GetPosition": {
+                "FunctionDescription": {
+                    "Name": "Get Axis Position",
+                    "Description": "Gets the actual Position of the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "MoveAbsolute": {
+                "FunctionDescription": {
+                    "Name": "MoveAbsolute",
+                    "Description": "Moves to an absolute position",
+                    "FunctionType": "Positioning function",
+                    "Category": "Positioning function"
+                },
+                "FunctionParameter": {
+                    "Position": {
+                        "Name": "Position",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 30.0,
+                        "Unit": "mm/s",
+                        "Default": 10.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 245.737,
+                        "Unit": "mm/s",
+                        "Default": 245.737,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 245.737,
+                        "Unit": "mm/s",
+                        "Default": 245.737,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 737.212,
+                        "Unit": "mm/s",
+                        "Default": 737.212,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "MoveRelative": {
+                "FunctionDescription": {
+                    "Name": "MoveRelative",
+                    "Description": "Moves to an relative position",
+                    "FunctionType": "Positioning function",
+                    "Category": "Positioning function"
+                },
+                "FunctionParameter": {
+                    "Distance": {
+                        "Name": "Distance",
+                        "Description": "Relative Distance to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 10.0,
+                        "Unit": "mm/s",
+                        "Default": 10.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 245.737,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 245.737,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 737.212,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "Reset": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                }
+            },
+            "PowerOn": {
+                "FunctionDescription": {
+                    "Name": "Power On",
+                    "Description": "Enables the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "PowerOff": {
+                "FunctionDescription": {
+                    "Name": "Power Off",
+                    "Description": "Disables the Axis",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            }
+        }
+    },
+    "Gantry": {
+        "Functions": {
+            "PowerOn": {
+                "FunctionDescription": {
+                    "Name": "Power Gantry On",
+                    "Description": "Enables the Axes System",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "PowerOff": {
+                "FunctionDescription": {
+                    "Name": "Power Gantry On",
+                    "Description": "Enables the Axes System",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                }
+            },
+            "MoveLinear": {
+                "FunctionDescription": {
+                    "Name": "Move XYZ Linear",
+                    "Description": "XYZ Axes System is moved on a line from current Position to Target Position",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                },
+                "FunctionParameter": {
+                    "Position_X": {
+                        "Name": "Position X",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Y": {
+                        "Name": "Position Y",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Z": {
+                        "Name": "Position Z",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 30.0,
+                        "Unit": "mm/s",
+                        "Default": 30.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 1000.0,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 1000.0,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 5000.0,
+                        "Unit": "mm/s",
+                        "Default": 5000.0,
+                        "DataType": "LREAL"
+                    },
+                    "InTargetTolerance": {
+                        "Name": "In Target Tolerance",
+                        "Description": "Value at which the Position is considered in Target and no Movement is executed",
+                        "Value": 0.1,
+                        "Unit": "mm/s",
+                        "Default": 0.1,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "MoveSafeHeight": {
+                "FunctionDescription": {
+                    "Name": "Move XYZ Linear",
+                    "Description": "XYZ Axes System is moved on a line from actual Position to Target Position",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                },
+                "FunctionParameter": {
+                    "Position_X": {
+                        "Name": "Position X",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Y": {
+                        "Name": "Position Y",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Z": {
+                        "Name": "Position Z",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 30.0,
+                        "Unit": "mm/s",
+                        "Default": 30.0,
+                        "DataType": "LREAL"
+                    },
+                    "VelocityZ": {
+                        "Name": "Velocity Z",
+                        "Description": "Velocity for vertical Movement",
+                        "Value": 10.0,
+                        "Unit": "mm/s",
+                        "Default": 10.0,
+                        "DataType": "LREAL"
+                    },
+                    "Acceleration": {
+                        "Name": "Acceleration",
+                        "Description": "Acceleration (=0). If the value is 0, the standard acceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 1000.0,
+                        "DataType": "LREAL"
+                    },
+                    "Deceleration": {
+                        "Name": "Deceleration",
+                        "Description": "Deceleration (=0). If the value is 0, the standard deceleration from the axis configuration in the System Manager is used.",
+                        "Value": 1000.0,
+                        "Unit": "mm/s",
+                        "Default": 1000.0,
+                        "DataType": "LREAL"
+                    },
+                    "Jerk": {
+                        "Name": "Jerk",
+                        "Description": "Jerk (=0). If the value is 0, the standard jerk from the axis configuration in the System Manager is used",
+                        "Value": 5000.0,
+                        "Unit": "mm/s",
+                        "Default": 5000.0,
+                        "DataType": "LREAL"
+                    },
+                    "InTargetTolerance": {
+                        "Name": "In Target Tolerance",
+                        "Description": "Value at which the Position is considered in Target and no Movement is executed",
+                        "Value": 0.1,
+                        "Unit": "mm",
+                        "Default": 0.1,
+                        "DataType": "LREAL"
+                    },
+                    "SafeHeight": {
+                        "Name": "SafeHeight",
+                        "Description": "Height for XY Movement",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    }
+                }
+            }
+        }
+    },
+    "VGU": {
+        "Functions": {
+            "Grip": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                }
+            },
+            "Release": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                }
+            }
+        }
+    },
+    "BSC": {
+        "Functions": {
+            "Light_SetOn": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                }
+            },
+            "Light_SetOff": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                }
+            }
+        }
+    },
+    "PBBs": {
+        "Functions": {
+            "RetractTools": {
+                "FunctionDescription": {
+                    "Name": "Move XYZ Linear",
+                    "Description": "XYZ Axes System is moved on a line from actual Position to Target Position",
+                    "FunctionType": "Function Type",
+                    "Category": "Category"
+                },
+                "FunctionParameter": {
+                    "Velocity": {
+                        "Name": "Velocity",
+                        "Description": "Maximum travel velocity (>0).",
+                        "Value": 30.0,
+                        "Unit": "mm/s",
+                        "Default": 30.0,
+                        "DataType": "LREAL"
+                    },
+                    "InTargetTolerance": {
+                        "Name": "In Target Tolerance",
+                        "Description": "Value at which the Position is considered in Target and no Movement is executed",
+                        "Value": 0.1,
+                        "Unit": "mm",
+                        "Default": 0.1,
+                        "DataType": "LREAL"
+                    },
+                    "SafeHeight": {
+                        "Name": "SafeHeight",
+                        "Description": "Height for XY Movement",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "PickUp": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                },
+                "FunctionParameter": {
+                    "Position_X": {
+                        "Name": "Position X",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Y": {
+                        "Name": "Position Y",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Z": {
+                        "Name": "Position Z",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "DontRetractTool": {
+                        "Name": "DontRetractTool",
+                        "Description": "Tool stays in working Position after Process Step finished",
+                        "Value": false,
+                        "Default": false,
+                        "DataType": "BOOL"
+                    },
+                    "SafeHeight": {
+                        "Name": "SafeHeight",
+                        "Description": "Height for XY Movement",
+                        "Value": 0.0,
+                        "Unit": "mm2",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Z_Approach": {
+                        "Name": "Z_Approach",
+                        "Description": "Approach Distance",
+                        "Value": 2.0,
+                        "Unit": "mm",
+                        "Default": 2.0,
+                        "DataType": "LREAL"
+                    }
+                }
+            },
+            "Place": {
+                "FunctionDescription": {
+                    "Name": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "Description": "Implementation error (FB_INIT -> SetFunctionDiscription)",
+                    "FunctionType": "None",
+                    "Category": "None"
+                },
+                "FunctionParameter": {
+                    "Position_X": {
+                        "Name": "Position X",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Y": {
+                        "Name": "Position Y",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Position_Z": {
+                        "Name": "Position Z",
+                        "Description": "Absolute target position to be used for positioning.",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "DontRetractTool": {
+                        "Name": "DontRetractTool",
+                        "Description": "Tool stays in working Position after Process Step finished",
+                        "Value": false,
+                        "Default": false,
+                        "DataType": "BOOL"
+                    },
+                    "SafeHeight": {
+                        "Name": "SafeHeight",
+                        "Description": "Height for XY Movement",
+                        "Value": 0.0,
+                        "Unit": "mm",
+                        "Default": 0.0,
+                        "DataType": "LREAL"
+                    },
+                    "Z_Approach": {
+                        "Name": "Z_Approach",
+                        "Description": "Approach Distance",
+                        "Value": 2.0,
+                        "Unit": "mm",
+                        "Default": 2.0,
+                        "DataType": "LREAL"
+                    }
+                }
+            }
+        }
+    },
+    "Cameras": {
+        "Functions": {
+            "SetExposureTime": {
+                "FunctionParameter": {
+                    "camera_name": {
+                        "Name": "Camera Name",
+                        "Description": "Name of the camera. E.g. 'camera_tcm'",
+                        "Unit": "",
+                        "Default": "",
+                        "DataType": "str"
+                    },
+                    "exposure_time": {
+                        "Name": "Exposure Time",
+                        "Description": "Exposure Time in seconds",
+                        "Unit": "seconds [s]",
+                        "Default": 0.001,
+                        "DataType": "ConstrainedFloatValue"
+                    }
+                }
+            },
+            "TakeAndSaveImage": {
+                "FunctionParameter": {
+                    "camera_name": {
+                        "Name": "Camera Name",
+                        "Description": "Name of the camera. E.g. 'camera_tcm'",
+                        "Unit": "",
+                        "Default": "",
+                        "DataType": "str"
+                    },
+                    "path": {
+                        "Name": "Path",
+                        "Description": "Path without filename of the image to store",
+                        "Unit": "",
+                        "Default": "",
+                        "DataType": "str"
+                    },
+                    "filename": {
+                        "Name": "Filename",
+                        "Description": "Optional filename of the image to store. If left empty, a timestamped name will be auto-generated",
+                        "Unit": "",
+                        "Default": "",
+                        "DataType": "str"
+                    }
+                }
+            },
+            "GetCameraNames": {
+                "FunctionParameter": {}
+            },
+            "GetExposureTime": {
+                "FunctionParameter": {
+                    "camera_name": {
+                        "Name": "Camera Name",
+                        "Description": "Name of the camera. E.g. 'camera_tcm'",
+                        "Unit": "",
+                        "Default": "",
+                        "DataType": "str"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+{
+    "RecipeName": "Assessment Example Sequence",
+    "StartSequenceId": "SequenceA",
+    "StartStepId": "get_camera_names",
+    "Step": [
+        {
+            "StepType": 1,
+            "StepId": "get_camera_names",
+            "ExecuteFunction": "Cameras/GetCameraNames",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "enable_axis_system"
+                }
+            ],
+            "Parameter": {}
+        },
+        {
+            "StepType": 5,
+            "StepId": "Done",
+            "ReturnCode": 0
+        },
+        {
+            "StepType": 1,
+            "StepId": "enable_axis_system",
+            "ExecuteFunction": "Gantry/PowerOn",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "move_to_bsc"
+                },
+                {
+                    "hrFunction": "Failed",
+                    "NextStepId": "Done"
+                }
+            ],
+            "Parameter": {}
+        },
+        {
+            "StepType": 1,
+            "StepId": "move_to_bsc",
+            "ExecuteFunction": "Gantry/MoveSafeHeight",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "enable_bsc_light"
+                }
+            ],
+            "Parameter": {
+                "Position_X": 120.0,
+                "Position_Y": 243.6,
+                "Position_Z": -126.0
+            }
+        },
+        {
+            "StepType": 1,
+            "StepId": "enable_bsc_light",
+            "ExecuteFunction": "BSC/Light_SetOn",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "take_image"
+                }
+            ],
+            "Parameter": {}
+        },
+        {
+            "StepType": 1,
+            "StepId": "take_image",
+            "ExecuteFunction": "Cameras/TakeAndSaveImage",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "disable_bsc_light"
+                }
+            ],
+            "Parameter": {
+                "camera_name": "camera_bsc",
+                "path": "C:\\Users\\administrator\\Pictures",
+                "filename": "image_bsc.png"
+            }
+        },
+        {
+            "StepType": 1,
+            "StepId": "disable_bsc_light",
+            "ExecuteFunction": "BSC/Light_SetOff",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "move_up"
+                }
+            ],
+            "Parameter": {}
+        },
+        {
+            "StepType": 1,
+            "StepId": "move_up",
+            "ExecuteFunction": "PBBs/RetractTools",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "disable_axis_system"
+                }
+            ],
+            "Parameter": {}
+        },
+        {
+            "StepType": 1,
+            "StepId": "disable_axis_system",
+            "ExecuteFunction": "Gantry/PowerOff",
+            "Transitions": [
+                {
+                    "hrFunction": "Succeeded",
+                    "NextStepId": "Done"
+                }
+            ],
+            "Parameter": {}
+        }
+    ]
+}
