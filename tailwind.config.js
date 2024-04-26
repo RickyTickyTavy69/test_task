@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       height:{
-        navbar: "112px",
-        mainContent: "calc(100vh - 112px)"
+        navbar: "60px",
+        mainContent: "calc(100vh - 60px)"
       }
     },
   },

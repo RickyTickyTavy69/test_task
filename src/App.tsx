@@ -14,7 +14,6 @@ function App() {
                 <Route path="editor" element={<Editor/>} />
                 <Route path="result" element={<SequenzPage/>}/>
             </Route>
-
         </Routes>
     </BrowserRouter>
   )

@@ -1,5 +1,5 @@
 import React from "react";
-import {Icon} from "../../../assets/icons";
+import {Icon} from "../../../shared/assets/icons";
 import useSequenzStore from "../../../entities/Sequenzes/useSequenz.store.ts";
 
 

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import machineCap from "../../../assets/MachineCapabilities_Assessment.json";
+import machineCap from "../../../shared/MachineCapabilities_Assessment.json";
 import useSequenzStore from "../../../entities/Sequenzes/useSequenz.store.ts";
 
 import Machine from "../Machine/Machine.tsx";

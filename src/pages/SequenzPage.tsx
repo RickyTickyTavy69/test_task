@@ -1,6 +1,7 @@
 import React from "react";
 import useSequenzStore from "../entities/Sequenzes/useSequenz.store.ts";
 import {useState} from "react";
+import Sequence from "./Sequence.tsx";
 
 const SequenzPage = () => {
 
@@ -9,10 +10,13 @@ const SequenzPage = () => {
     const [chosenSequence, setChosenSequence] = useState();
 
     const chooseSequence = (e: React.SyntheticEvent<HTMLButtonElement>) => {
-        const recipeName = e.currentTarget.value;
+        const recipeName = e.currentTarget.innerText;
+        // console.log("choosen name", recipeName)
         const choosenSequence = savedSequences.find((sequence, idx) => {
+            // console.log(sequence.RecipeName)
             return sequence.RecipeName === recipeName;
         });
+        console.log("chosen sequence", choosenSequence);
         setChosenSequence(choosenSequence);
     }
 
@@ -22,9 +26,9 @@ const SequenzPage = () => {
                 <h2>You Sequences Menu</h2>
                 <ul className={`border-black rounded border-2 overflow-hidden
                         p-2 m-2 min-h-[700px] max-h-[700px] overflow-y-scroll min-w-[250px]`}>
-                    {savedSequences.map(sequence => {
+                    {savedSequences.map( (sequence, idx) => {
                         return(
-                            <li>
+                            <li key={idx}>
                                 <button onClick={chooseSequence} className={'border-4 border-black rounded py-1 px-2'}>
                                     {sequence.RecipeName}
                                 </button>
@@ -35,11 +39,7 @@ const SequenzPage = () => {
             </section>
             <section className={'h-full w-full border-black border-2 flex justify-center'}>
                 Chosen Sequence
-                {chosenSequence &&
-                    <div>
-
-                    </div>
-                }
+                { chosenSequence && <Sequence sequence={chosenSequence} />}
             </section>
         </div>
 
