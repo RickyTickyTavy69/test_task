@@ -1,10 +1,6 @@
 import {useState} from "react";
 import OpenedFunc from "../OpenedFunc/OpenedFunc.tsx";
-import {FunctionDescription} from "./functions.types.ts";
-import {FunctionParameter} from "./functions.types.ts";
-
-type FunctionType = Record<"FunctionDescription", FunctionDescription> | Record<"FunctionParameter", FunctionParameter>;
-type Functions = Record<string, FunctionType>;
+import {Functions} from "./functions.types.ts";
 
 type MachineProps = {
     functions: Functions;

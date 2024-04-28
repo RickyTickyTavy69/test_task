@@ -39,12 +39,9 @@ export interface FunctionDescription {
     Category:     string;
 }
 
-
-export interface FunctionOption {
-    functionDescription: FunctionDescription;
+export type FunctionType = {
+    FunctionDescription?: FunctionDescription
+    FunctionParameter?: FunctionParameter
 }
 
-export interface FunctionOptionWithParams {
-    functionDescription: FunctionDescription;
-    functionParameter:   FunctionParameter;
-}
+export type Functions = Record<string, FunctionType>;

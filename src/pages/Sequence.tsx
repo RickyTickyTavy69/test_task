@@ -1,9 +1,9 @@
 import SavedStep from "./Editor/SavedStep/SavedStep.tsx";
 import {Styles} from "../shared/styles/styles.ts";
 import useSequenzStore from "../entities/Sequenzes/useSequenz.store.ts";
+import {SequenceType} from "../entities/Sequenzes/sequence.types.ts";
 
-
-const Sequence = ({sequence}) => {
+const Sequence = ({sequence}: {sequence: SequenceType}) => {
     const {deleteRecipe} = useSequenzStore();
 
     const deleteSequence = () => {
