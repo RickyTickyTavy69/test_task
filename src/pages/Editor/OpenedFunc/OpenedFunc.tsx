@@ -1,5 +1,6 @@
 import useSequenzStore from "../../../entities/Sequenzes/useSequenz.store.ts";
 import {FunctionType} from "../Machine/functions.types.ts";
+import {StepsType} from "../../../entities/Sequenzes/sequence.types.ts";
 
 type OpenedFuncType = {
     FuncValue: FunctionType
@@ -15,7 +16,7 @@ const OpenedFunc = ({FuncValue, selectedMachine, funcName}: OpenedFuncType) => {
     // const functionParameters = FuncValue.FunctionParameter || {};
 
     const addFunctionStep = () => {
-        const Step = {
+        const Step : StepsType = {
             StepType: 1,
             StepId: FuncValue?.FunctionDescription?.Name || funcName,
             ExecuteFunction: `${selectedMachine}/${funcName}`,
@@ -25,7 +26,6 @@ const OpenedFunc = ({FuncValue, selectedMachine, funcName}: OpenedFuncType) => {
                     "NextStepId": ""
                 },
             ],
-            Parameter: {},
         }
         addStep(Step);
     }
