@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="flex justify-around text-xl font-bold w-96 h-navbar items-center">
             <NavLink className={`${Styles.BUTTON_BORDER_SMALL}`} to={"/"}>Main</NavLink>
             <NavLink className={`${Styles.BUTTON_BORDER_SMALL}`} to={"editor"}>Editor</NavLink>
-            <NavLink className={`${Styles.BUTTON_BORDER_SMALL}`} to={"result"}>Result</NavLink>
+            <NavLink className={`${Styles.BUTTON_BORDER_SMALL}`} to={"result"}>My Sequences</NavLink>
         </nav>
     )
 }

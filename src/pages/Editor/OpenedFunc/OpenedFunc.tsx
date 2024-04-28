@@ -36,10 +36,6 @@ const OpenedFunc = ({FuncValue, selectedMachine, funcName}) => {
                     "hrFunction": "Succeeded",
                     "NextStepId": ""
                 },
-                {
-                    "hrFunction": "Failed",
-                    "NextStepId": "Done"
-                }
             ],
             Parameter: {},
         }

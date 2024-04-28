@@ -802,45 +802,6 @@
                         "DataType": "ConstrainedFloatValue"
                     }
                 }
-            },
-            "TakeAndSaveImage": {
-                "FunctionParameter": {
-                    "camera_name": {
-                        "Name": "Camera Name",
-                        "Description": "Name of the camera. E.g. 'camera_tcm'",
-                        "Unit": "",
-                        "Default": "",
-                        "DataType": "str"
-                    },
-                    "path": {
-                        "Name": "Path",
-                        "Description": "Path without filename of the image to store",
-                        "Unit": "",
-                        "Default": "",
-                        "DataType": "str"
-                    },
-                    "filename": {
-                        "Name": "Filename",
-                        "Description": "Optional filename of the image to store. If left empty, a timestamped name will be auto-generated",
-                        "Unit": "",
-                        "Default": "",
-                        "DataType": "str"
-                    }
-                }
-            },
-            "GetCameraNames": {
-                "FunctionParameter": {}
-            },
-            "GetExposureTime": {
-                "FunctionParameter": {
-                    "camera_name": {
-                        "Name": "Camera Name",
-                        "Description": "Name of the camera. E.g. 'camera_tcm'",
-                        "Unit": "",
-                        "Default": "",
-                        "DataType": "str"
-                    }
-                }
             }
         }
     }

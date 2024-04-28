@@ -1,4 +1,4 @@
-type IconNames = "check" | "fail";
+type IconNames = "check" | "fail" | "plus" | "minus";
 import {IconColors} from "./iconColors.ts";
 import iconColors from "./iconColors.ts";
 

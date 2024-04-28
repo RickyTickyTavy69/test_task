@@ -1,47 +1,35 @@
 import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware'
-
-type Succeeded = {
-    "hrFunction": "Succeeded",
-    "NextStepId": string,
-}
-
-type Failed = {
-    "hrFunction": "Failed",
-    "NextStepId": string,
-}
-
-type StepsType = {
-    StepType: number,
-    StepId: string,
-    ExecuteFunction?: string,
-    Transitions: Array<Succeeded | Failed>,
-    Parameter?: Object,
-    ReturnCode?: number,
-}
+import { persist } from 'zustand/middleware'
+import {StepsType} from "./sequence.types.ts";
 
 type Store = {
-    savedRecipes: [],
+    savedRecipes: Array<any>,
     RecipeName: string,
     RecipeSteps : Array<StepsType>,
     addStep: (step: StepsType) => void,
     changeRecipeName: (recipeName: string) => void,
     changeStepFailedFn: (changedStep: string, failedFn: string) => void,
+    changeStepSuccessFn: (changedStep: string, successFn: string) => void,
     clearRecepieSteps: () => void,
     saveRecipe: () => void,
+    deleteRecipe: (recipeName : string) => void,
 }
 
-const useSequenzStore = create(
+const useSequenzStore = create<Store>()(
 persist(
     (set) => ({
-        savedSequences: [],
+        savedRecipes: [],
         RecipeName: "",
         RecipeSteps : [],
         addStep: (step) => set((state) => {
-             return {
+            // нужно как то при добавлении нового степ в предыдущем степе его след при саксесс добавлять имя этого.
+            if(state.RecipeSteps.length > 0){
+                state.RecipeSteps.at(-1)!.Transitions[0].NextStepId = step.StepId
+            }
+            return {
                  ...state,
                  RecipeSteps: [...state.RecipeSteps, step],
-             }
+            }
         }),
         changeRecipeName: (Name: string) => set((state) => {
             return{
@@ -68,7 +56,24 @@ persist(
                 RecipeSteps: [...newSteps],
             }
         }),
-        // will use persist of zustand or localStorage to save this sequence/recipe
+        changeStepSuccessFn: (changedStep: string, successFn: string) => set((state) => {
+            const newSteps = state.RecipeSteps.map(
+                (step) => {
+                    if(step.StepId === changedStep){
+                        step.Transitions[0] = {
+                            "hrFunction": "Succeeded",
+                            "NextStepId": successFn,
+                        }
+                    }
+                    return step;
+                }
+            );
+
+            return{
+                ...state,
+                RecipeSteps: [...newSteps],
+            }
+        }),
         saveRecipe: () => set((state) => {
                 const sequence = {
                     RecipeName: state.RecipeName,
@@ -79,10 +84,23 @@ persist(
 
                 return {
                     ...state,
-                    savedSequences: [...state.savedSequences, sequence],
+                    savedRecipes: [...state.savedRecipes, sequence],
                 }
 
         }),
+        deleteRecipe: (recipeName: string) => set((state) => {
+            // реализовать функцию удаления, пофиксить адаптивность,
+            // сделать добавление параметров, пофиксить ошибки линтера все, что красное
+            // пофиксить стиль кода.
+            const newRecipes = state.savedRecipes.filter((recipe) => {
+                return recipe.RecipeName !== recipeName;
+            })
+
+            return {
+                ...state,
+                savedRecipes: newRecipes,
+            }
+        }) ,
         clearRecepieSteps: () => set((state) => {
                 return {
                     ...state,

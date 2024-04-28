@@ -1,30 +1,31 @@
 import {EditorContent} from "./EditorContent";
 import {Step} from "./Step";
+import MotionContainer from "../../shared/common/MotionContainer.tsx";
 
 import useSequenzStore from "../../entities/Sequenzes/useSequenz.store.ts";
 
 const Editor = () => {
-    const {RecipeName, RecipeSteps, saveRecipe, clearRecepieSteps} = useSequenzStore();
-
-    // console.log("recipeName in Editor", recipeName);
-
-    // нужно сделать так, чтобы можно было добавить все степы в секвенц которые нужны, потом
-    // можно выбрать степ после фейла из тех что есть, а если этот степ должен выполняться только после фейла, то
-    // можно его вынуть из секвенц, через тоггл на нём.
-
-    const doneStep =  {
-        "StepType": 5,
-        "StepId": "Done",
-        "ReturnCode": 0
-    }
+    const {RecipeName, RecipeSteps, saveRecipe, clearRecepieSteps, savedRecipes} = useSequenzStore();
 
     const saveSequence = () => {
-        saveRecipe()
+        let nameValid: boolean = true;
+        savedRecipes.forEach((recipe) => {
+            if(recipe.RecipeName === RecipeName){
+                alert("please choose a different name");
+                nameValid = false;
+            }
+        })
+        if(nameValid){
+            saveRecipe();
+            clearRecepieSteps();
+            alert("recipe was saved");
+        }
+
     }
 
     return(
         <>
-            <div className={'flex h-mainContent w-full'}>
+            <MotionContainer>
                 <section className={'h-full w-full border-black border-2 flex items-center px-20 justify-between'}>
                     <div className={'flex-col'}>
                         <div className={'flex justify-between gap-8 my-5'}>
@@ -34,13 +35,13 @@ const Editor = () => {
                         <div>
                             <h2>Sequenz Steps</h2>
                             <div className={`border-black rounded border-2 overflow-hidden
-                        p-2 m-2 min-h-[700px] max-h-[700px] overflow-y-scroll min-w-[250px]`}>
+                            p-2 m-2 min-h-[700px] max-h-[700px] overflow-y-scroll min-w-[450px]`}>
                                 {RecipeSteps.map((step, index) => {
                                     return (
-                                        <Step key={index} stepOptions={step}/>
+                                        <Step key={index} StepId={step.StepId} StepType={step.StepType} ExecuteFunction={step.ExecuteFunction}/>
                                     )
                                 })}
-                                <Step stepOptions={doneStep}/>
+                                <Step StepType={5} StepId={'Done'}/>
                             </div>
                         </div>
                     </div>
@@ -59,7 +60,7 @@ const Editor = () => {
                 {/* здесь нужно сделать опцию выбора из тех машин, приведённых в json и соответственно, смотря какую
              машину выберет, чтобы можно было выбирать функции и функции запрашивали бы параметры чтобы получилось
              так же как в примере секвенц, плюс решить как эту секвенс визуализировать. */}
-            </div>
+            </MotionContainer>
         </>
     )
 }
