@@ -2,23 +2,13 @@ import React, {useState} from "react";
 import machineCap from "../../../shared/MachineCapabilities_Assessment.json";
 import useSequenzStore from "../../../entities/Sequenzes/useSequenz.store.ts";
 
+import {MachineType} from "../../../shared/types/editor.types.ts";
+
 import Machine from "../Machine/Machine.tsx";
 
 const EditorContent = () => {
 
     const {changeRecipeName} = useSequenzStore();
-
-    // don't know if I need this.
-    enum MachineType {
-        GantryAxisX = "GantryAxisX",
-        GantryAxisY = "GantryAxisY",
-        GantryAxisZ = "GantryAxisZ",
-        Gantry = "Gantry",
-        VGU = "VGU",
-        BSC = "BSC",
-        PBBs = "PBBs",
-        Cameras = "Cameras",
-    }
 
     const [selectedMachine, setSelectedMachine] = useState<MachineType>(MachineType.GantryAxisX);
 
@@ -61,7 +51,6 @@ const EditorContent = () => {
 
         </div>
     )
-
 }
 
 export default EditorContent;

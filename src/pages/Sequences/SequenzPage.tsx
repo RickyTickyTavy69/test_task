@@ -1,10 +1,10 @@
 import React from "react";
-import useSequenzStore from "../entities/Sequenzes/useSequenz.store.ts";
+import useSequenzStore from "../../entities/Sequenzes/useSequenz.store.ts";
 import {useState} from "react";
 import Sequence from "./Sequence.tsx";
-import MotionContainer from "../shared/common/MotionContainer.tsx";
+import MotionContainer from "../../shared/common/MotionContainer.tsx";
 
-import {SequenceType} from "../entities/Sequenzes/sequence.types.ts";
+import {SequenceType} from "../../entities/Sequenzes/sequence.types.ts";
 
 const SequenzPage = () => {
 

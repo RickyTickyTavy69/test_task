@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Editor from "./pages/Editor/Editor.tsx";
-import SequenzPage from "./pages/SequenzPage.tsx";
+import SequenzPage from "./pages/Sequences/SequenzPage.tsx";
 import MainPage from "./pages/MainPage.tsx";
 
 import "./index.css";
