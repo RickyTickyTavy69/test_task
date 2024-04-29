@@ -4,22 +4,21 @@ import {useState} from "react";
 import Sequence from "./Sequence.tsx";
 import MotionContainer from "../shared/common/MotionContainer.tsx";
 
+import {SequenceType} from "../entities/Sequenzes/sequence.types.ts";
+
 const SequenzPage = () => {
 
     const {savedRecipes} = useSequenzStore();
 
-    const [chosenSequence, setChosenSequence] = useState();
+    const [chosenSequence, setChosenSequence] = useState<SequenceType>();
 
     const chooseSequence = (e: React.SyntheticEvent<HTMLButtonElement>) => {
         const recipeName = e.currentTarget.innerText;
         const chosenSequence = savedRecipes.find((sequence) => {
             return sequence.RecipeName === recipeName;
-        });
+        })
         setChosenSequence(chosenSequence);
     }
-    // это можно вынести в стор.
-
-    console.log("chosenSequence", chosenSequence);
 
     return(
         <MotionContainer>
@@ -38,10 +37,10 @@ const SequenzPage = () => {
                     })}
                 </ul>
             </section>
-            <section className={'h-full w-full border-black border-2 flex flex-col justify-center'}>
-                <div>
+            <section className={'h-full w-full border-black border-2 flex flex-col'}>
+                <h2 className={'text-center py-4'}>
                     Chosen Sequence
-                </div>
+                </h2>
                 {chosenSequence && <Sequence sequence={chosenSequence}/>}
             </section>
         </MotionContainer>

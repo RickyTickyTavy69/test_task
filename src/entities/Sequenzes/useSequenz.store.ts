@@ -1,9 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware'
 import {StepsType} from "./sequence.types.ts";
+import {SequenceType} from "./sequence.types.ts";
 
 type Store = {
-    savedRecipes: Array<any>,
+    savedRecipes: Array<SequenceType>,
     RecipeName: string,
     RecipeSteps : Array<StepsType>,
     addStep: (step: StepsType) => void,
