@@ -12,7 +12,7 @@ type Store = {
     changeStepFailedFn: (changedStep: string, failedFn: string) => void,
     changeStepSuccessFn: (changedStep: string, successFn: string) => void,
     clearRecepieSteps: () => void,
-    saveRecipe: () => void,
+    saveRecipe: (recipe?: SequenceType) => void,
     deleteRecipe: (recipeName : string) => void,
 }
 
@@ -40,6 +40,8 @@ persist(
 
         }),
         changeStepFailedFn: (changedStep: string, failedFn: string) => set((state) => {
+            console.log("state is", state);
+            console.log("store change failed", changedStep, failedFn);
             const newSteps = state.RecipeSteps.map(
                 (step) => {
                     if(step.StepId === changedStep){
@@ -51,6 +53,7 @@ persist(
                     return step;
                 }
             );
+            console.log("new steps are", newSteps);
 
             return{
                 ...state,
@@ -75,7 +78,13 @@ persist(
                 RecipeSteps: [...newSteps],
             }
         }),
-        saveRecipe: () => set((state) => {
+        saveRecipe: (recipe?: SequenceType) => set((state) => {
+                if(recipe){
+                    return{
+                        ...state,
+                        savedRecipes: [...state.savedRecipes, recipe],
+                    }
+                }
                 const sequence = {
                     RecipeName: state.RecipeName,
                     StartSequenceId: "SequenceA",
@@ -107,7 +116,7 @@ persist(
                     ...state,
                     RecipeSteps: [],
                 }
-        })
+        }),
     }),
     {
         name: 'sequences-storage',

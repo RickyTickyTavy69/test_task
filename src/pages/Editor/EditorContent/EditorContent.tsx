@@ -14,13 +14,10 @@ const EditorContent = () => {
 
     const handleSelect = (event: React.SyntheticEvent<HTMLSelectElement>) => {
         const value: MachineType = event.currentTarget.value as MachineType;
-        console.log("selected is", value);
         setSelectedMachine(value);
     }
 
     const functions = machineCap[selectedMachine].Functions;
-
-    console.log("functions EditorContent", functions);
 
     const changeName = (e: React.SyntheticEvent<HTMLInputElement>) => {
        const name = e.currentTarget.value;

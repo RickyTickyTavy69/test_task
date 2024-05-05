@@ -1,20 +1,35 @@
 import {OpenCloseContainer} from "../../../shared/common";
 import OpenedStep from "./OpenedStep.tsx";
 import ClosedStep from "./ClosedStep.tsx";
+import {useGetStep} from "../../../entities/Sequenzes/hooks";
 
-type StepProps = {
-    StepType: number,
-    StepId: string,
-    ExecuteFunction?: string,
-}
 
-const Step = ({StepType, StepId, ExecuteFunction} : StepProps) => {
+const Step = ({StepId} : { StepId: string }) => {
+
+    const step = useGetStep(StepId);
 
     return(
-        <OpenCloseContainer
-            closedComponent={<ClosedStep StepId={StepId} StepType={StepType} />}
-            openedComponent={<OpenedStep StepId={StepId} StepType={StepType} ExecuteFunction={ExecuteFunction}/>}
-            />
+        <>
+            {
+                step &&
+                <OpenCloseContainer
+                    closedComponent={<ClosedStep
+                        StepId={step.StepId}
+                        StepType={step.StepType}
+                    />}
+                    openedComponent={<OpenedStep
+                        StepId={step.StepId}
+                        StepType={step.StepType}
+                        ExecuteFunction={step.ExecuteFunction}
+                        transitions={step.Transitions}
+                    />}
+                />
+            }
+            {
+                StepId === "Done" &&
+                <ClosedStep StepId={"Done"} StepType={5}/>
+            }
+        </>
     )
 }
 

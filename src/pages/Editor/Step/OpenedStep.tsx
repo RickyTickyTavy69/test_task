@@ -3,13 +3,17 @@ import {Styles} from "../../../shared/styles/styles.ts";
 import useSequenzStore from "../../../entities/Sequenzes/useSequenz.store.ts";
 import React from "react";
 
+import {stopPropagate} from "../../../shared/lib/utils.ts";
+import {Transitions} from "../../../entities/Sequenzes/sequence.types.ts";
+
 type OpenedStepProps = {
     StepId: string;
     StepType: number;
     ExecuteFunction?: string;
+    transitions: Transitions;
 }
 
-const OpenedStep = ({StepId, StepType, ExecuteFunction}: OpenedStepProps) => {
+const OpenedStep = ({StepId, StepType, ExecuteFunction, transitions}: OpenedStepProps) => {
 
     const {RecipeSteps , changeStepFailedFn, changeStepSuccessFn} = useSequenzStore(state => state);
 
@@ -22,6 +26,9 @@ const OpenedStep = ({StepId, StepType, ExecuteFunction}: OpenedStepProps) => {
         const value = e.currentTarget.value;
         changeStepSuccessFn(StepId, value);
     }
+
+    const failedFn = transitions[1]?.NextStepId;
+    const successFn = transitions[0]?.NextStepId;
 
     return(
         <div className={'flex flex-col gap-2 border-black border-2 rounded p-2 m-2 relative'}>
@@ -39,7 +46,9 @@ const OpenedStep = ({StepId, StepType, ExecuteFunction}: OpenedStepProps) => {
             { StepId !== "Done" && <div className={'flex justify-between'}>
                 <div>
                     <Icon name={"fail"} color={'fail'}/>
-                    <select className={`${Styles.SELECT_BORDER}`} defaultValue={'none'} onChange={changeFnAfterFailed}>
+                    <select
+                        onClick={stopPropagate}
+                            className={`${Styles.SELECT_BORDER}`} defaultValue={failedFn} onChange={changeFnAfterFailed}>
                         {RecipeSteps.map((step, idx) => {
                             return(
                                 <option key={idx} value={step.StepId}>{step.StepId}</option>
@@ -51,7 +60,7 @@ const OpenedStep = ({StepId, StepType, ExecuteFunction}: OpenedStepProps) => {
                 </div>
                 <div>
                     <Icon name={"check"} color={'success'}/>
-                    <select className={`${Styles.SELECT_BORDER}`} onChange={changeFnAfterSuccess}>
+                    <select defaultValue={successFn} onClick={stopPropagate} className={`${Styles.SELECT_BORDER}`} onChange={changeFnAfterSuccess}>
                         <option value="Next Index">Next Index</option>
                         <option value="Done">Done</option>
                     </select>

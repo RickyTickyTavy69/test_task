@@ -37,10 +37,14 @@ const OpenedFunc = ({FuncValue, selectedMachine, funcName}: OpenedFuncType) => {
                 <div>{description?.Description}</div>
                 <div>{description?.FunctionType}</div>
                 <div>{description?.Category}</div>
-                <div>
-                    <button onClick={addFunctionStep} className={"rounded border-black border-2 m-4 p-2 hover:border-red-800"}>add to sequenz</button>
-                </div>
             </div>}
+            <div>
+                <button
+                    onClick={addFunctionStep}
+                    className={"rounded border-black border-2 m-4 p-2 hover:border-red-800"}>
+                    add to sequenz
+                </button>
+            </div>
         </div>
     )
 }

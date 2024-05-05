@@ -18,8 +18,8 @@ const SavedStep = ({StepType, StepId, ExecuteFunction, transitions}: SavedStepPr
         setOpened((prevState) => !prevState);
     }
 
-    const failedFn = transitions[1]?.NextStepId || '--';
-    const successFn = transitions[0]?.NextStepId || 'Next Step';
+    const failedFn = transitions.length > 2 ? transitions[1]?.NextStepId : '--';
+    const successFn = transitions.length > 1 ? transitions[0]?.NextStepId : 'Next Step';
 
     return(
         <div className="flex flex-col gap-2 border-black border-2 rounded p-2 m-2 relative">

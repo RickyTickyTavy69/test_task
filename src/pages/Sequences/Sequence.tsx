@@ -2,6 +2,7 @@ import SavedStep from "../Editor/SavedStep/SavedStep.tsx";
 import {Styles} from "../../shared/styles/styles.ts";
 import useSequenzStore from "../../entities/Sequenzes/useSequenz.store.ts";
 import {SequenceType} from "../../entities/Sequenzes/sequence.types.ts";
+import ClosedStep from "../Editor/Step/ClosedStep.tsx";
 
 const Sequence = ({sequence}: {sequence: SequenceType}) => {
     const {deleteRecipe} = useSequenzStore();
@@ -35,14 +36,21 @@ const Sequence = ({sequence}: {sequence: SequenceType}) => {
                         <div className={`border-black rounded border-2 overflow-hidden
                         p-2 m-2 min-h-[700px] max-h-[700px] overflow-y-scroll min-w-[350px]`}>
                             {sequence.Step.map((step, index) => {
-                                return (
-                                    <SavedStep
-                                        key={index}
-                                        StepType={step.StepType}
-                                        StepId={step.StepId}
-                                        transitions={step.Transitions}
-                                    />
-                                )
+                                if(step.StepId !== "Done"){
+                                    return (
+                                        <SavedStep
+                                            key={index}
+                                            StepType={step.StepType}
+                                            StepId={step.StepId}
+                                            transitions={step.Transitions}
+                                        />
+                                    )
+                                } else {
+                                    return(
+                                        <ClosedStep key={index} StepType={5} StepId={"Done"}/>
+                                    )
+                                }
+
                             })}
                         </div>
                     </section>
