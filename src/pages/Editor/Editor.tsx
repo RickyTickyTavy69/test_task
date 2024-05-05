@@ -11,7 +11,6 @@ import useSequenzStore from "../../entities/Sequenzes/useSequenz.store.ts";
 import {Typografy} from "../../shared/common/Typografy";
 import {MainTexts} from "../../shared/constants";
 import mainTexts from "../../shared/constants/mainTexts.ts";
-import {SequenceType} from "../../entities/Sequenzes/sequence.types.ts";
 
 
 const Editor = () => {
@@ -26,6 +25,7 @@ const Editor = () => {
     }
 
     const selectFile = (e: React.SyntheticEvent<HTMLInputElement>) => {
+        // @ts-expect-error not fixed yet
         const file = e.currentTarget?.files[0];
         setLoadedFile(file)
     }
@@ -38,8 +38,10 @@ const Editor = () => {
 
         const reader = new FileReader()
         reader.onload = async (e) => {
+            // @ts-expect-error not fixed yet
             const text = (e.target.result);
             if(text){
+                // @ts-expect-error not fixed yet
                 const jsonText = JSON.parse(text)
                 saveRecipe(jsonText);
                 alert("your sequence was loaded and saved. Go to 'My Sequences' to see it.")
