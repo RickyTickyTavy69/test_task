@@ -54,6 +54,10 @@ const Editor = () => {
 
     const saveSequence = () => {
         let nameValid: boolean = true;
+        if (!RecipeName){
+            nameValid = false;
+            alert("please choose a name for your sequence")
+        }
         savedRecipes.forEach((recipe) => {
             if(recipe.RecipeName === RecipeName){
                 alert("please choose a different name");
