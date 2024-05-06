@@ -23,7 +23,6 @@ persist(
         RecipeName: "",
         RecipeSteps : [],
         addStep: (step) => set((state) => {
-            // нужно как то при добавлении нового степ в предыдущем степе его след при саксесс добавлять имя этого.
             if(state.RecipeSteps.length > 0){
                 state.RecipeSteps.at(-1)!.Transitions[0].NextStepId = step.StepId
             }
@@ -40,8 +39,6 @@ persist(
 
         }),
         changeStepFailedFn: (changedStep: string, failedFn: string) => set((state) => {
-            console.log("state is", state);
-            console.log("store change failed", changedStep, failedFn);
             const newSteps = state.RecipeSteps.map(
                 (step) => {
                     if(step.StepId === changedStep){
@@ -53,7 +50,6 @@ persist(
                     return step;
                 }
             );
-            console.log("new steps are", newSteps);
 
             return{
                 ...state,
@@ -99,9 +95,6 @@ persist(
 
         }),
         deleteRecipe: (recipeName: string) => set((state) => {
-            // реализовать функцию удаления, пофиксить адаптивность,
-            // сделать добавление параметров, пофиксить ошибки линтера все, что красное
-            // пофиксить стиль кода.
             const newRecipes = state.savedRecipes.filter((recipe) => {
                 return recipe.RecipeName !== recipeName;
             })
@@ -124,5 +117,4 @@ persist(
 
     )
 );
-    // maybe use partialize from zustand to just save saved by user data
 export default useSequenzStore;

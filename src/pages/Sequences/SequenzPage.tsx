@@ -9,7 +9,6 @@ import {SequenceType} from "../../entities/Sequenzes/sequence.types.ts";
 const SequenzPage = () => {
 
     const {savedRecipes} = useSequenzStore();
-    console.log("saved recipes", savedRecipes);
 
     const [chosenSequence, setChosenSequence] = useState<SequenceType>();
 

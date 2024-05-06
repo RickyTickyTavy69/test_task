@@ -21,7 +21,6 @@ const EditorContent = () => {
 
     const changeName = (e: React.SyntheticEvent<HTMLInputElement>) => {
        const name = e.currentTarget.value;
-       console.log("changing name", name);
        changeRecipeName(name);
     }
 
